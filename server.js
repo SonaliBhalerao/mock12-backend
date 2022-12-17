@@ -3,6 +3,8 @@ const app = express();
 require("dotenv").config;
 const cors = require('cors');
 const userRoutes = require('./Routes/User.Route');
+const jobRoutes = require('./Routes/Job.Route');
+
 
 
 const {connection} = require("./db.js");
@@ -15,7 +17,10 @@ app.get("/", async(req, res)=>{
     res.send("Homepage")
 });
 
+app.use("/job", jobRoutes);
 app.use("/", userRoutes);
+
+
 
 
 app.listen(PORT, async()=>{
