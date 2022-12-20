@@ -3,8 +3,8 @@ mongoose.set('strictQuery', true);
 
 const userSchema = new mongoose.Schema({
     name: String,
-    email:String,
-    password: String
+    level: String,
+    score: Number
 })
 
 const UserModel = mongoose.model("users", userSchema);
